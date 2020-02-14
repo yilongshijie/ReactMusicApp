@@ -1,0 +1,12 @@
+.aside{
+    display: inline-block;
+    width: 10rem;
+    height: 100%;
+    overflow: auto;
+    background: red; 
+    vertical-align: top;     
+}
+ul li{
+    text-align: center;
+    margin:   10px 0;
+}
