@@ -1,6 +1,6 @@
 .aside{
     display: inline-block;
-    width: 10rem;
+    width: 30px;
     height: 100%;
     overflow: auto;
     background: red; 

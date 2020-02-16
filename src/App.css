@@ -4,4 +4,5 @@
 .content{
     height: calc(100vh - 8rem);
     overflow: hidden;
+    width: 750px;
 }
