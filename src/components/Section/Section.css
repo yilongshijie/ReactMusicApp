@@ -1,8 +1,5 @@
 .section{
-    display: inline-block;
-    background: rebeccapurple;
-    width:calc(100vw - 10rem);
-    height: 100%;
-    overflow: auto;
+    display: inline-block; 
+    width:calc(100% - 120px);
     vertical-align: top;    
 }
