@@ -1,0 +1,20 @@
+.section{
+    display: inline-block; 
+    width:calc(100% - 120px);
+    vertical-align: top;
+    min-height: calc(100vh - 60px); 
+    position: relative;
+}
+.section-content{
+    position: relative;
+}
+.bg{
+    height: calc(100vh - 60px); 
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 90%;
+    filter: blur(30px) drop-shadow(8px 8px 10px );;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+}  

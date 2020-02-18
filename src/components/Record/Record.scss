@@ -1,0 +1,72 @@
+.record {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+.borderOut {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background: repeating-radial-gradient(
+    circle,
+    transparent 0,
+    transparent 40%,
+    #020203 40%,
+    #020203 44%,
+    #2b2b2e 44%,
+    #131315 46%,
+    #2b2b2e 48%,
+    #131315 50%,
+    #2b2b2e 52%,
+    #131315 54%,
+    #2b2b2e 56%,
+    #131315 58%,
+    #2b2b2e 60%,
+    #131315 62%,
+    #2b2b2e 64%,
+    #131315 66%,
+    #2b2b2e 68%,
+    #131315 69%,
+    #131315 72%
+  );
+  animation: loop  9s linear infinite ;
+  img {
+    position: absolute;
+    width: 57%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  &::before {
+    content: "";
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.4), transparent);
+    border-radius: 50%;
+  }
+  &::after {
+    content: "";
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid rgba(216, 216, 216, 0.5);
+    box-sizing: border-box;
+  }
+}
+
+@keyframes loop {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
