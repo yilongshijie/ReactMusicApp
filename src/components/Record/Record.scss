@@ -2,6 +2,9 @@
   display: inline-block;
   width: 200px;
   height: 200px;
+  position: relative;
+  left: 10px;
+  top: 30px;
 }
 .borderOut {
   width: 100%;
@@ -30,7 +33,7 @@
     #131315 69%,
     #131315 72%
   );
-  animation: loop  9s linear infinite ;
+  animation: loop 9s linear infinite;
   img {
     position: absolute;
     width: 57%;
@@ -68,5 +71,21 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.needle {
+  position: absolute;
+  z-index: 2;
+  top: -128px;
+  right: 62px;
+  transform: rotate(-20deg);
+  height: 190px;
+  width: 18px;
+  img {
+    width: 18px;
+    height: 101px;
+    position: absolute;
+    bottom: 0;
   }
 }

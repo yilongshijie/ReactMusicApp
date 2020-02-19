@@ -1,10 +1,13 @@
 import React from 'react'
 import './Record.scss'
-function Record () {
+function Record() {
     return (
         <div className="record">
+            <div className='needle'>
+                <img src="./image.svg"></img>
+            </div>
             <div className="borderOut">
-                <img src="./zjl/s.jpg"/>
+                <img src="./zjl/s.jpg" />
             </div>
         </div>
     )

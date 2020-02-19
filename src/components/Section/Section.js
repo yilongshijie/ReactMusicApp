@@ -6,7 +6,8 @@ function Section() {
     <div className="section">
       <div className='bg'  style={{backgroundImage: "url('zjl/s.jpg')"}}></div>
       <div className="section-content">
-        <Record></Record>
+   
+        <Record  ></Record>
       </div>
     </div>
   );
