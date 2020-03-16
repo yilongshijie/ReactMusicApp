@@ -1,9 +1,9 @@
 import React from 'react';
-import './Aside.scss';
+import style from  './Aside.scss';
 
 function Aside() {
   return (
-    <div className="aside">
+    <div className={style.aside}>
       <ul>
         <li><img src="zjl/s.jpg" /></li>
         <li><img src="zjl/109951163076302925.jpg" /></li>

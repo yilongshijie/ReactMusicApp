@@ -1,9 +1,9 @@
 import React from 'react';
-import './Header.css'
+import style from './Header.css'
 
 function Header() {
   return (
-    <div className="header">
+    <div className={style.header}>
       云音乐
     </div>
   );

@@ -1,12 +1,12 @@
 import React from 'react'
-import './Record.scss'
+import style from './Record.scss'
 function Record() {
     return (
-        <div className="record">
-            <div className='needle'>
+        <div className={style.record}>
+            <div className={style.needle}>
                 <img src="./image.svg"></img>
             </div>
-            <div className="borderOut">
+            <div className={style.borderOut}>
                 <img src="./zjl/s.jpg" />
             </div>
         </div>

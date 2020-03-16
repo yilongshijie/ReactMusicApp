@@ -1,10 +1,10 @@
 import React from 'react';
-import './Footer.css'
+import style from './Footer.css'
 import Auido from '../Audio/Audio'
 function Footer() {
   return (
-    <div className="footer">
-       <Auido></Auido>
+    <div className={style.footer}>
+      <Auido></Auido>
     </div>
   );
 }

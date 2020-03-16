@@ -1,11 +1,11 @@
 import React from 'react';
-import './Section.scss';
+import style from './Section.scss';
 import Record  from '../Record/Record';
 function Section() {
   return (
-    <div className="section">
-      <div className='bg'  style={{backgroundImage: "url('zjl/s.jpg')"}}></div>
-      <div className="section-content">
+    <div className={style.section}>
+      <div className={style.bg}  style={{backgroundImage: "url('zjl/s.jpg')"}}></div>
+      <div className={style.content}>
    
         <Record  ></Record>
       </div>
