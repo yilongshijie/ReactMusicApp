@@ -5,9 +5,9 @@ function Audio() {
     return (
         <div className={style.Audio}>
             <div className={style.button}>
-                <span className='pre'></span>
-                <span className='play'></span>
-                <span className='next'></span>
+                <span className={style.pre}></span>
+                <span className={style.play}></span>
+                <span className={style.next}></span>
             </div>
             <div className={style.progress}>
                 <span className={style['progress-nav']}></span>
