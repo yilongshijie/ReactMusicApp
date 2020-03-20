@@ -1,13 +1,22 @@
 import React from 'react';
-import style from  './Aside.scss';
-
+import style from './Aside.scss';
+import { MusicContext } from '../../context/context'
 function Aside() {
+
   return (
     <div className={style.aside}>
       <ul>
-        <li><img src="zjl/s.jpg" /></li>
-        <li><img src="zjl/109951163076302925.jpg" /></li>
-        <li><img src="zjl/18715886930028449.jpg" /></li>
+        <MusicContext.Consumer>
+          {
+            context => {
+              console.log(context)
+              let temp = context.record.records.map((item, index) => {
+                return (<li key={index}><img src={item.img} onClick={(e) => context.toggleTheme(index, e)} /></li>)
+              })
+              return temp;
+            }
+          }
+        </MusicContext.Consumer>
       </ul>
     </div>
   );
