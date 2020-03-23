@@ -15,21 +15,18 @@ class App extends React.Component {
       records: [
         {
           img: './zjl/18715886930028449.jpg',
-          href: ''
+          href: './music/周杰伦 - 七里香.m4a'
         },
         {
           img: './zjl/109951163076302925.jpg',
-          href: ''
+          href: './music/周杰伦 - 可爱女人.m4a'
         }
       ],
     };
     this.state =
     {
       record: record,
-      currentReord: {
-        img: './zjl/18715886930028449.jpg',
-        href: ''
-      },
+      currentReord: record.records[0],
       toggleTheme: (index) => {
         this.setState(state => ({
           currentReord: state.record.records[index]
