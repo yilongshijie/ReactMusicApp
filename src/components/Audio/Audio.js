@@ -102,7 +102,7 @@ class Audio extends React.Component {
     componentDidMount() {
         setInterval(() => {
             this.changeState();
-        }, 1000);
+        }, 200);
 
     }
 

@@ -15,15 +15,15 @@ class App extends React.Component {
       records: [
         {
           img: './cover/109951163076302925.jpg',
-          href: './music/周杰伦+-+简单爱.mp3'
+          href: 'http://m10.music.126.net/20200324192711/52512f469d4571e806e4de47f527e1f7/ymusic/d6d3/7aac/9aed/802e6b3a1bd34a18927f4adab563690a.mp3'
         },
         {
           img: './cover/109951164274343764.jpg',
-          href: './music/遇见+-孙燕姿.mp3'
+          href: 'http://m10.music.126.net/20200324191907/760e6aaa6cf4b5199d67aa5ab6af080b/ymusic/0653/5153/0e59/192dc93d07f9573468999363dc0eaa8b.mp3'
         },
         {
           img: './cover/109951163240682406.jpg',
-          href: './music/胡歌-逍遙嘆.mp3'
+          href: 'http://m10.music.126.net/20200324192634/ba17023e5898699b7f53e3b6409745f6/ymusic/ff8f/169b/5b41/1eca9e7e3525627e7b2c23750bd4bd7c.mp3'
         }
 
       ],
