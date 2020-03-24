@@ -28,28 +28,57 @@ class App extends React.Component {
       record: record,
       currentReord: Object.assign({}, record.records[0], { href: '' }),
       currentIndex: 0,
+      currentActive: false,
       change: (index) => {
         this.setState(state => {
-          state.record.records[index].active = true;
           return {
             currentIndex: index,
-            currentReord: state.record.records[index]
+            currentReord: state.record.records[index],
+            currentActive: true
           }
         })
       },
       acitveChange: () => {
         this.setState(state => ({
           currentReord: Object.assign(state.currentReord,
-            state.record.records[state.currentIndex],
-            { active: !state.currentReord.active }
-          )
+            state.record.records[state.currentIndex]
+          ),
+          currentActive: !state.currentActive
         }))
       },
       next: () => {
-
+        this.setState(state => {
+          if (state.record.records.length - 1 > state.currentIndex) {
+            return {
+              currentIndex: state.currentIndex + 1,
+              currentReord: state.record.records[state.currentIndex + 1],
+              currentActive: true
+            }
+          } else {
+            return {
+              currentIndex: 0,
+              currentReord: state.record.records[0],
+              currentActive: true
+            }
+          }
+        });
       },
       pre: () => {
-
+        this.setState(state => {
+          if (state.currentIndex > 0) {
+            return {
+              currentIndex: state.currentIndex - 1,
+              currentReord: state.record.records[state.currentIndex - 1],
+              currentActive: true
+            }
+          } else {
+            return {
+              currentIndex: state.record.records.length - 1,
+              currentReord: state.record.records[state.record.records.length - 1],
+              currentActive: true
+            }
+          }
+        });
       }
     }
     this.play = this.play.bind(this);

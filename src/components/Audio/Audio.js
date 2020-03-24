@@ -20,9 +20,9 @@ class Audio extends React.Component {
                 {musicContext => {
                     return <div className={style.Audio}>
                         <div className={style.button}>
-                            <span className={style.pre}></span>
-                            <span className={`${musicContext.currentReord.active ? style.stop : style.play} ${style.primary}`} onClick={e => this.play(musicContext.acitveChange)}></span>
-                            <span className={style.next}></span>
+                            <span className={style.pre} onClick={e => musicContext.pre()}></span>
+                            <span className={`${musicContext.currentActive ? style.stop : style.play} ${style.primary}`} onClick={e => this.play(musicContext.acitveChange)}></span>
+                            <span className={style.next}onClick={e => musicContext.next()}></span>
                         </div>
                         <div className={style.progress}>
                             <span style={{ width: this.state.auido.percentage }} className={style['progress-nav']}></span>
