@@ -26,16 +26,25 @@ class App extends React.Component {
     this.state =
     {
       record: record,
-      currentReord: record.records[0],
-      toggleTheme: (index) => {
-        this.setState(state => ({
-          currentReord: state.record.records[index]
-        }))
+      currentReord: Object.assign({}, record.records[0], { href: '' }),
+      change: (index) => {
+        this.setState(state => {
+          state.record.records[index].active = true;
+          return {
+            currentReord: state.record.records[index]
+          }
+        })
       },
+      acitveChange: () => {
+        this.setState(state => ({
+          currentReord: Object.assign(state.currentReord, { active: !state.currentReord.active })
+        }))
+      }
     }
-
+    this.play = this.play.bind(this);
   }
   render() {
+
     return (
       <div className={styles.app}>
         <MusicContext.Provider value={this.state}>
@@ -47,8 +56,12 @@ class App extends React.Component {
           </div>
           <Footer></Footer>
         </MusicContext.Provider>
+
       </div >
     );
+  }
+  play() {
+    this.state.change(0);
   }
 }
 

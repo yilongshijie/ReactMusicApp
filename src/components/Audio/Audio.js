@@ -10,8 +10,7 @@ class Audio extends React.Component {
                 duration: 1,
                 currentTime: 0,
                 percentage: '0%'
-            },
-            paused: false
+            }
         }
         this.play = this.play.bind(this);
     }
@@ -22,14 +21,13 @@ class Audio extends React.Component {
                     return <div className={style.Audio}>
                         <div className={style.button}>
                             <span className={style.pre}></span>
-                            <span className={`${this.state.paused ? style.stop : style.play} ${style.primary}`} onClick={this.play}></span>
+                            <span className={`${musicContext.currentReord.active ? style.stop : style.play} ${style.primary}`} onClick={e => this.play(musicContext.acitveChange)}></span>
                             <span className={style.next}></span>
                         </div>
                         <div className={style.progress}>
                             <span style={{ width: this.state.auido.percentage }} className={style['progress-nav']}></span>
                         </div>
-                        <audio src={musicContext.currentReord.href} ref={this.state.audioRef} autoPlay="autoplay">
-
+                        <audio src={musicContext.currentReord.href} ref={this.state.audioRef}   autoPlay  >
                         </audio>
                     </div>
                 }
@@ -37,16 +35,14 @@ class Audio extends React.Component {
             </MusicContext.Consumer >
         );
     }
-    play() {
-        this.setState({
-            paused: !this.state.audioRef.current.paused
+    play(fun) {
 
-        })
         if (this.state.audioRef.current.paused) {
             this.state.audioRef.current.play();
         } else {
             this.state.audioRef.current.pause();
         }
+        fun();
     }
     componentDidMount() {
         setInterval(() => {
@@ -55,10 +51,10 @@ class Audio extends React.Component {
                     duration: this.state.audioRef.current.duration,
                     currentTime: this.state.audioRef.current.currentTime,
                     percentage: (this.state.audioRef.current.currentTime / this.state.audioRef.current.duration) * 100 + '%',
-                    paused: this.state.audioRef.current.paused
                 }
             })
         }, 3000);
+
     }
 
 }

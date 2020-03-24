@@ -11,7 +11,7 @@ function Aside() {
             context => {
               console.log(context)
               let temp = context.record.records.map((item, index) => {
-                return (<li key={index}><img src={item.img} onClick={(e) => context.toggleTheme(index, e)} /></li>)
+                return (<li key={index}><img src={item.img} onClick={(e) => context.change(index, e)} /></li>)
               })
               return temp;
             }

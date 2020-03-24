@@ -15,7 +15,6 @@ function Section() {
         }
       </MusicContext.Consumer>
       <div className={style.content}>
-
         <Record  ></Record>
       </div>
     </div>

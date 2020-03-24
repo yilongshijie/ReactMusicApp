@@ -9,7 +9,7 @@ function Record() {
             </div>
             <MusicContext.Consumer>
                 {context => {
-                   return <div className={style.borderOut}>
+                    return <div className={`${style.borderOut}  ${context.currentReord.active ? style.active : ''}`}>
                         <img src={context.currentReord.img} />
                     </div>
                 }}
