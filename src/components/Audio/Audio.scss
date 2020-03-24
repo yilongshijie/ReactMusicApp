@@ -1,145 +1,158 @@
-.button {
-    display: inline-block;
-    line-height: 30px;
-    margin: 0 10px;
-    .pre {
+.Audio {
+    .button {
         display: inline-block;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: red;
-        opacity: 0.9;
-        vertical-align: middle;
-        position: relative;
-        cursor: pointer;
-        &:before {
-            content: "";
+        line-height: 28px;
+        margin: 0 10px;
+        .pre {
             display: inline-block;
-            width: 2px;
-            height: 8px;
-            background: #fff;
-            position: absolute;
-            left: 6px;
-            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: red;
+            opacity: 0.9;
+            vertical-align: middle;
+            position: relative;
+            cursor: pointer;
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 2px;
+                height: 8px;
+                background: #fff;
+                position: absolute;
+                left: 6px;
+                top: 5px;
+            }
+            &:after {
+                content: "";
+                display: inline-block;
+                border: 5px solid #fff;
+                border-width: 3px 5px 3px 5px;
+                border-color: transparent #fff transparent transparent;
+                position: absolute;
+                right: 4px;
+                top: 6px;
+            }
+            &:hover {
+                opacity: 1;
+            }
         }
-        &:after {
-            content: "";
+        .primary {
             display: inline-block;
-            border: 5px solid #fff;
-            border-width: 3px 5px 3px 5px;
-            border-color: transparent #fff transparent transparent;
-            position: absolute;
-            right: 4px;
-            top: 6px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: red;
+            vertical-align: middle;
+            margin: 0 10px;
+            position: relative;
+            opacity: 0.9;
         }
-        &:hover {
-            opacity: 1;
+        .stop {
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 2px;
+                height: 11px;
+                background: #fff;
+                position: absolute;
+                left: 8px;
+                top: 7px;
+            }
+            &:after {
+                content: "";
+                display: inline-block;
+                width: 2px;
+                height: 11px;
+                background: #fff;
+                position: absolute;
+                left: 14px;
+                top: 7px;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .play {
+            &:after {
+                content: "";
+                display: inline-block;
+                border: 8px solid #fff;
+                border-width: 5px 8px 5px 8px;
+                border-color: transparent transparent transparent #fff;
+                position: absolute;
+                right: -1px;
+                top: 7px;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+        .next {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: red;
+            vertical-align: middle;
+            position: relative;
+            cursor: pointer;
+            opacity: 0.9;
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 2px;
+                height: 8px;
+                background: #fff;
+                position: absolute;
+                left: 11px;
+                top: 5px;
+            }
+            &:after {
+                content: "";
+                display: inline-block;
+                border: 5px solid #fff;
+                border-width: 3px 5px 3px 5px;
+                border-color: transparent transparent transparent #fff;
+                position: absolute;
+                right: 3px;
+                top: 6px;
+            }
+            &:hover {
+                opacity: 1;
+            }
         }
     }
-    .primary {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: red;
-        vertical-align: middle;
-        margin: 0 15px;
-        position: relative;
-        opacity: 0.9;
-    }
-    .stop {
-        &:before {
-            content: "";
-            display: inline-block;
-            width: 2px;
-            height: 11px;
-            background: #fff;
-            position: absolute;
-            left: 8px;
-            top: 7px;
-        }
-        &:after {
-            content: "";
-            display: inline-block;
-            width: 2px;
-            height: 11px;
-            background: #fff;
-            position: absolute;
-            left: 14px;
-            top: 7px;
-        }
-        &:hover {
-            opacity: 1;
-        }
-    }
-    .play {
-        &:after {
-            content: "";
-            display: inline-block;
-            border: 8px solid #fff;
-            border-width: 5px 8px 5px 8px;
-            border-color: transparent transparent transparent #fff;
-            position: absolute;
-            right: -1px;
-            top: 7px;
-        }
-        &:hover {
-            opacity: 1;
-        }
-    }
-    .next {
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: red;
-        vertical-align: middle;
-        position: relative;
-        cursor: pointer;
-        opacity: 0.9;
-        &:before {
-            content: "";
-            display: inline-block;
-            width: 2px;
-            height: 8px;
-            background: #fff;
-            position: absolute;
-            left: 11px;
-            top: 5px;
-        }
-        &:after {
-            content: "";
-            display: inline-block;
-            border: 5px solid #fff;
-            border-width: 3px 5px 3px 5px;
-            border-color: transparent transparent transparent #fff;
-            position: absolute;
-            right: 3px;
-            top: 6px;
-        }
-        &:hover {
-            opacity: 1;
-        }
-    }
-}
 
-.progress {
-    width: 300px;
-    position: relative;
-    line-height: 0px;
-    display: inline-block;
-    background: #ccc;
-    height: 4px;
-    vertical-align: middle;
-    border-radius: 2px;
-    cursor: pointer;
-    overflow: hidden;
-    .progress-nav {
-        height: 4px;
-        background: red;
+    .progress {
+        width: 300px;
+        position: relative;
+        line-height: 0px;
         display: inline-block;
+        background: #ccc;
+        height: 4px;
         vertical-align: middle;
         border-radius: 2px;
-        line-height: 0px;
+        cursor: pointer;
+        overflow: hidden;
+        .progress-nav {
+            height: 4px;
+            background: red;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 2px;
+            line-height: 0px;
+        }
+    }
+    var {
+        display: inline-block;
+        width: 27px;
+        font-size: 9px;
+        font-style: normal;
+        color: #666;
+        padding: 2px;
+        &:first-of-type{
+            text-align: right;
+        }
     }
 }

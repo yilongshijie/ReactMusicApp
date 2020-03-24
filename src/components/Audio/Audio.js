@@ -7,12 +7,12 @@ class Audio extends React.Component {
         this.state = {
             audioRef: React.createRef(),
             auido: {
-                duration: 1,
+                duration: 0,
                 currentTime: 0,
                 percentage: '0%'
             }
         }
-        this.play = this.play.bind(this);
+        this.changeProgress = this.changeProgress.bind(this);
     }
     render() {
         return (
@@ -24,9 +24,12 @@ class Audio extends React.Component {
                             <span className={`${musicContext.currentActive ? style.stop : style.play} ${style.primary}`} onClick={e => this.play(musicContext.acitveChange)}></span>
                             <span className={style.next} onClick={e => this.change(musicContext.next)}></span>
                         </div>
-                        <div className={style.progress}>
-                            <span style={{ width: this.state.auido.percentage }} className={style['progress-nav']}></span>
+                        <var>{this.secondToDate(this.state.auido.currentTime)}</var>
+
+                        <div className={style.progress} onClick={e => this.changeProgress(musicContext.acitveChange, e)}>
+                            <span style={{ width: this.state.auido.percentage }} className={style['progress-nav']} ></span>
                         </div>
+                        <var>{this.secondToDate(this.state.auido.duration)}</var>
                         <audio src={musicContext.currentReord.href} ref={this.state.audioRef} autoPlay  >
                         </audio>
                     </div>
@@ -42,6 +45,38 @@ class Audio extends React.Component {
                 duration: 0,
                 currentTime: 0,
                 percentage: 0 + '%',
+            }
+        })
+    }
+    secondToDate(result) {
+        if (!result) return '';
+        var h = Math.floor(result / 3600) < 10 ? '0' + Math.floor(result / 3600) : Math.floor(result / 3600);
+        var m = Math.floor((result / 60 % 60)) < 10 ? '0' + Math.floor((result / 60 % 60)) : Math.floor((result / 60 % 60));
+        var s = Math.floor((result % 60)) < 10 ? '0' + Math.floor((result % 60)) : Math.floor((result % 60));
+        if (h && h !== '00') {
+            h = h + ":";
+        } else {
+            h = "";
+        }
+        return result = h + m + ":" + s;
+    }
+    changeProgress(fun, e) {
+        if (this.state.audioRef.current.paused) {
+            return
+        }
+        let nativeEvent = e.nativeEvent;
+        let offsetWidth = nativeEvent.target.offsetWidth;
+        if (nativeEvent.target.tagName === "SPAN") {
+            offsetWidth = nativeEvent.target.parentNode.offsetWidth
+        }
+        let ratio = (nativeEvent.offsetX || nativeEvent.offsetX)
+            / offsetWidth;
+        this.state.audioRef.current.currentTime = parseInt(ratio * this.state.audioRef.current.duration);
+        this.setState({
+            auido: {
+                duration: this.state.audioRef.current.duration,
+                currentTime: this.state.audioRef.current.currentTime,
+                percentage: (this.state.audioRef.current.currentTime / this.state.audioRef.current.duration) * 100 + '%',
             }
         })
     }
@@ -67,7 +102,7 @@ class Audio extends React.Component {
     componentDidMount() {
         setInterval(() => {
             this.changeState();
-        }, 3000);
+        }, 1000);
 
     }
 
