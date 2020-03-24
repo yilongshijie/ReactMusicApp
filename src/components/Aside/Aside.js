@@ -18,7 +18,7 @@ class Aside extends React.Component {
             {
               context => {
                 let temp = context.record.records.map((item, index) => {
-                  return (<li key={index}><img src={item.img} onClick={(e) => context.change(index, e)} /></li>)
+                  return (<li key={index}><img src={item.img} onClick={(e) => this.change(context.change, index, e)} /></li>)
                 })
                 return temp;
               }
@@ -27,6 +27,10 @@ class Aside extends React.Component {
         </ul>
       </div>
     );
+  }
+  change(fun, index, e) {
+    fun(index);
+    this.setState({ navShow: true })
   }
   toggle() {
     this.setState({ navShow: !this.state.navShow })
