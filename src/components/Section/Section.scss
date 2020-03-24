@@ -1,6 +1,6 @@
 .section{
     display: inline-block; 
-    width:calc(100% - 120px);
+    flex:1;
     vertical-align: top;
     min-height: calc(100vh - 60px); 
     position: relative;
@@ -15,6 +15,6 @@
     background-size: 90%;
     filter: blur(30px) drop-shadow(8px 8px 10px );;
     position: absolute;
-    top: 40px;
+    top: 0;
     width: 100%;
 }  
