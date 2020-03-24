@@ -8,9 +8,9 @@
     vertical-align: top;
     border-right: 1px solid #ccc;
     position: relative;
-    z-index: 1;
-    transition: width 0.5s;
-    &.navHidden{
+    z-index: 100;
+    transition: width 0.2s;
+    &.navHidden {
         width: 0;
         overflow: hidden;
     }
@@ -38,7 +38,7 @@
         background: #f44336;
         cursor: pointer;
         opacity: 0.9;
-        &:hover{
+        &:hover {
             opacity: 1;
         }
         &:before {
@@ -50,7 +50,7 @@
             margin: 0 auto;
             position: relative;
             height: 3px;
-            top:9px;
+            top: 9px;
         }
         &::after {
             content: " ";
@@ -61,7 +61,44 @@
             margin: 0 auto;
             position: relative;
             height: 0px;
-            top:12px;
+            top: 12px;
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .aside {
+        position: fixed;
+        width: 0;
+        top: 79px;
+        z-index: 1000000000;
+        &.navHidden {
+            width: 280px;
+            overflow: hidden;
+        }
+        ul {
+            li {
+                img {
+                    width: 220px;
+                }
+            }
+        }
+        .nav {
+            width: 80px;
+            height: 80px;
+            &:before {
+                content: " ";
+                border: 5px solid #fff;
+                border-width: 5px 0;
+
+                position: relative;
+                height: 9px;
+                top: 20px;
+            }
+            &::after {
+                border: 5px solid #fff;
+                border-width: 5px 0 0;
+                top: 28px;
+            }
         }
     }
 }

@@ -4,3 +4,9 @@
     border-top:1px solid #ccc;
  
 }
+
+@media screen and (max-width: 1000px) {
+    .footer{
+        height: 80px; 
+    }
+}

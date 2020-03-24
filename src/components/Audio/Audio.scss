@@ -151,8 +151,46 @@
         font-style: normal;
         color: #666;
         padding: 2px;
+        vertical-align: middle;
         &:first-of-type{
             text-align: right;
         }
     }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .Audio {
+        .button {
+            line-height: 80px;
+            margin: 0 20px;
+            .pre {
+                 zoom: 3;
+            }
+            .primary {
+                zoom: 3;
+            }
+           
+            .next {
+                zoom: 3;
+            }
+        }
+    
+        .progress {
+            width: 260px; 
+            height: 8px;
+            border-radius: 4px;
+            .progress-nav {
+                height: 8px;
+                border-radius: 4px;
+            }
+        }
+        var {
+            line-height: 80px;
+            width: 90px;
+            font-size: 28px;
+            padding: 2px;
+        }
+    }
+    
 }

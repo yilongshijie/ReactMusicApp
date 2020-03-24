@@ -98,3 +98,10 @@
 .needleActive {
     transform: rotate(-20deg);
 }
+
+@media screen and (max-width: 1000px) {
+    .record{
+        zoom: 2.3;
+        transform: translate(55px, 0px);
+    }
+}

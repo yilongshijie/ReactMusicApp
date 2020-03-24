@@ -4,6 +4,13 @@
     line-height: 30px;
     color: #fff;
     font-size: 15px;
-    text-indent: 10px;
     padding-left: 33px;
+}
+@media screen and (max-width: 1000px) {
+    .header{
+        height: 80px;
+        line-height: 80px;
+        font-size: 30px;
+        padding-left: 88px;
+    }
 }
