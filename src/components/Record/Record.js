@@ -3,7 +3,6 @@ import style from './Record.scss'
 import { MusicContext } from '../../context/context'
 function Record() {
     return (
-
         <MusicContext.Consumer>
             {context => {
                 return (

@@ -165,14 +165,18 @@
             line-height: 80px;
             margin: 0 20px;
             .pre {
-                 zoom: 3;
+                 
+                 transform: scale(3);
+                 margin-left: 10px;
             }
             .primary {
-                zoom: 3;
+                transform: scale(3);
+                margin-left: 70px;
             }
            
             .next {
-                zoom: 3;
+                transform: scale(3);
+                margin-left: 60px;
             }
         }
     
