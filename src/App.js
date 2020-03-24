@@ -14,22 +14,9 @@ class App extends React.Component {
     const record = {
       records: [
         {
-          img: './cover/18715886930028449.jpg',
-          href: './music/周杰伦 - 回到过去.m4a'
-        },
-        {
-          img: './cover/7946170535396804.jpg',
-          href: './music/周杰伦 - 斗牛.m4a'
-        },
-        {
           img: './cover/109951163076302925.jpg',
           href: './music/周杰伦+-+简单爱.mp3'
         },
-        {
-          img: './cover/18894007811887644.jpg',
-          href: './music/周杰伦 - 懦夫.m4a'
-        },
-
         {
           img: './cover/109951164274343764.jpg',
           href: './music/遇见+-孙燕姿.mp3'
