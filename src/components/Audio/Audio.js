@@ -20,9 +20,9 @@ class Audio extends React.Component {
                 {musicContext => {
                     return <div className={style.Audio}>
                         <div className={style.button}>
-                            <span className={style.pre} onClick={e => musicContext.pre()}></span>
+                            <span className={style.pre} onClick={e => this.change(musicContext.pre)}></span>
                             <span className={`${musicContext.currentActive ? style.stop : style.play} ${style.primary}`} onClick={e => this.play(musicContext.acitveChange)}></span>
-                            <span className={style.next}onClick={e => musicContext.next()}></span>
+                            <span className={style.next} onClick={e => this.change(musicContext.next)}></span>
                         </div>
                         <div className={style.progress}>
                             <span style={{ width: this.state.auido.percentage }} className={style['progress-nav']}></span>
@@ -35,6 +35,16 @@ class Audio extends React.Component {
             </MusicContext.Consumer >
         );
     }
+    change(fun) {
+        fun();
+        this.setState({
+            auido: {
+                duration: 0,
+                currentTime: 0,
+                percentage: 0 + '%',
+            }
+        })
+    }
     play(fun) {
         fun();
         setTimeout(() => {
@@ -45,15 +55,18 @@ class Audio extends React.Component {
             }
         }, 0);
     }
+    changeState() {
+        this.setState({
+            auido: {
+                duration: this.state.audioRef.current.duration,
+                currentTime: this.state.audioRef.current.currentTime,
+                percentage: (this.state.audioRef.current.currentTime / this.state.audioRef.current.duration) * 100 + '%',
+            }
+        })
+    }
     componentDidMount() {
         setInterval(() => {
-            this.setState({
-                auido: {
-                    duration: this.state.audioRef.current.duration,
-                    currentTime: this.state.audioRef.current.currentTime,
-                    percentage: (this.state.audioRef.current.currentTime / this.state.audioRef.current.duration) * 100 + '%',
-                }
-            })
+            this.changeState();
         }, 3000);
 
     }
