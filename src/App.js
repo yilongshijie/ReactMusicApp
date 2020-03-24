@@ -27,18 +27,29 @@ class App extends React.Component {
     {
       record: record,
       currentReord: Object.assign({}, record.records[0], { href: '' }),
+      currentIndex: 0,
       change: (index) => {
         this.setState(state => {
           state.record.records[index].active = true;
           return {
+            currentIndex: index,
             currentReord: state.record.records[index]
           }
         })
       },
       acitveChange: () => {
         this.setState(state => ({
-          currentReord: Object.assign(state.currentReord, { active: !state.currentReord.active })
+          currentReord: Object.assign(state.currentReord,
+            state.record.records[state.currentIndex],
+            { active: !state.currentReord.active }
+          )
         }))
+      },
+      next: () => {
+
+      },
+      pre: () => {
+
       }
     }
     this.play = this.play.bind(this);

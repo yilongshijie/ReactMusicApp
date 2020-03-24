@@ -27,7 +27,7 @@ class Audio extends React.Component {
                         <div className={style.progress}>
                             <span style={{ width: this.state.auido.percentage }} className={style['progress-nav']}></span>
                         </div>
-                        <audio src={musicContext.currentReord.href} ref={this.state.audioRef}   autoPlay  >
+                        <audio src={musicContext.currentReord.href} ref={this.state.audioRef} autoPlay  >
                         </audio>
                     </div>
                 }
@@ -36,13 +36,14 @@ class Audio extends React.Component {
         );
     }
     play(fun) {
-
-        if (this.state.audioRef.current.paused) {
-            this.state.audioRef.current.play();
-        } else {
-            this.state.audioRef.current.pause();
-        }
         fun();
+        setTimeout(() => {
+            if (this.state.audioRef.current.paused) {
+                this.state.audioRef.current.play();
+            } else {
+                this.state.audioRef.current.pause();
+            }
+        }, 0);
     }
     componentDidMount() {
         setInterval(() => {

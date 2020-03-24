@@ -9,7 +9,6 @@ function Aside() {
         <MusicContext.Consumer>
           {
             context => {
-              console.log(context)
               let temp = context.record.records.map((item, index) => {
                 return (<li key={index}><img src={item.img} onClick={(e) => context.change(index, e)} /></li>)
               })
