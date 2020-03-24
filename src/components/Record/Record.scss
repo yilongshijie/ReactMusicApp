@@ -68,7 +68,7 @@
     }
 }
 .active {
-  animation-play-state: running;
+    animation-play-state: running;
 }
 @keyframes loop {
     from {
@@ -84,13 +84,17 @@
     z-index: 2;
     top: -128px;
     right: 62px;
-    transform: rotate(-20deg);
+    transform: rotate(-50deg);
     height: 190px;
     width: 18px;
+    transition: transform 0.5s;
     img {
         width: 18px;
         height: 101px;
         position: absolute;
         bottom: 0;
     }
+}
+.needleActive {
+    transform: rotate(-20deg);
 }

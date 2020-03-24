@@ -81,7 +81,6 @@ class App extends React.Component {
         });
       }
     }
-    this.play = this.play.bind(this);
   }
   render() {
 
@@ -99,9 +98,6 @@ class App extends React.Component {
 
       </div >
     );
-  }
-  play() {
-    this.state.change(0);
   }
 }
 
